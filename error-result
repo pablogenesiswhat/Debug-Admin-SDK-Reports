@@ -1,0 +1,36 @@
+## HTTP request
+GET /admin/reports/v1/usage/dates/2019-01-23 HTTP/1.1
+Host: www.googleapis.com
+Content-length: 0
+Authorization: Bearer ya29.GlucBhK0QfAegfciiYrfsjxYEPQ2cc4kGy41hVzo2c-6ejUUkppR8f4RRJD3wSSKWqTmW0JAXXmurD3P5u7lTliLF_N3slGZJ8KyZwJjNX-qYYTG6tfke40_qOPg
+
+## Headers Response
+HTTP/1.1 400 Bad Request
+Content-length: 310
+X-xss-protection: 1; mode=block
+X-content-type-options: nosniff
+Transfer-encoding: chunked
+Expires: Thu, 24 Jan 2019 23:33:39 GMT
+Vary: Origin, X-Origin
+Server: GSE
+-content-encoding: gzip
+Cache-control: private, max-age=0
+Date: Thu, 24 Jan 2019 23:33:39 GMT
+X-frame-options: SAMEORIGIN
+Alt-svc: quic=":443"; ma=2592000; v="44,43,39"
+Content-type: application/json; charset=UTF-8
+
+## JSON response
+{
+  "error": {
+    "code": 400, 
+    "message": "Data for dates later than 2019-01-22 is not yet available. Please check back later", 
+    "errors": [
+      {
+        "domain": "global", 
+        "message": "Data for dates later than 2019-01-22 is not yet available. Please check back later", 
+        "reason": "invalid"
+      }
+    ]
+  }
+}
