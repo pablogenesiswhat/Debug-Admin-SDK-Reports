@@ -1,21 +1,23 @@
+# Result Google playground
+
 ## HTTP request
-GET /admin/reports/v1/usage/dates/2019-01-23 HTTP/1.1
+GET /admin/reports/v1/usage/dates/2018-12-08 HTTP/1.1
 Host: www.googleapis.com
 Content-length: 0
-Authorization: Bearer ya29.GlucBhK0QfAegfciiYrfsjxYEPQ2cc4kGy41hVzo2c-6ejUUkppR8f4RRJD3wSSKWqTmW0JAXXmurD3P5u7lTliLF_N3slGZJ8KyZwJjNX-qYYTG6tfke40_qOPg
+Authorization: Bearer ya29.GlucBtRoUQGuzydVeCvcKc0uuim3k4CFhrdfWvzK3K8XWTxyAwH1TayACRCWHV6VROtdDFROnfn_56xJtyFDMUvGEAHKfGwYc8L3lqbyPplUot41WTTo7V7-3nlI
 
-## Headers Response
-HTTP/1.1 400 Bad Request
-Content-length: 310
+HTTP/1.1 200 OK
+Content-length: 145359
 X-xss-protection: 1; mode=block
+Content-location: https://www.googleapis.com/admin/reports/v1/usage/dates/2018-12-08
 X-content-type-options: nosniff
 Transfer-encoding: chunked
-Expires: Thu, 24 Jan 2019 23:33:39 GMT
+Expires: Fri, 25 Jan 2019 16:24:11 GMT
 Vary: Origin, X-Origin
 Server: GSE
--content-encoding: gzip
-Cache-control: private, max-age=0
-Date: Thu, 24 Jan 2019 23:33:39 GMT
+Etag: "Ai7-fio5OapTgz3wSQiZZjdGBnI/rNaiMr5108IPb1K-qgki8QjKKvU"
+Cache-control: private, max-age=0, must-revalidate, no-transform
+Date: Fri, 25 Jan 2019 16:24:11 GMT
 X-frame-options: SAMEORIGIN
 Alt-svc: quic=":443"; ma=2592000; v="44,43,39"
 Content-type: application/json; charset=UTF-8
@@ -23,14 +25,96 @@ Content-type: application/json; charset=UTF-8
 ## JSON response
 {
   "error": {
-    "code": 400, 
-    "message": "Data for dates later than 2019-01-22 is not yet available. Please check back later", 
+    "code": 400,
+    "message": "Data for dates later than 2019-01-22 is not yet available. Please check back later",
     "errors": [
       {
-        "domain": "global", 
-        "message": "Data for dates later than 2019-01-22 is not yet available. Please check back later", 
+        "domain": "global",
+        "message": "Data for dates later than 2019-01-22 is not yet available. Please check back later",
         "reason": "invalid"
       }
     ]
   }
 }
+
+
+## ----------------------------------------------------------------------------------------------------------------------------
+# Result Google API Explorer
+
+## HTTP request
+Request URL: https://content.googleapis.com/admin/reports/v1/usage/dates/2018-12-08?key=<MY_KEY>
+Request Method: GET
+Status Code: 200
+Remote Address: [2607:f8b0:4012:809::200a]:443
+Referrer Policy: no-referrer-when-downgrade
+
+## Response Headers
+alt-svc: quic=":443"; ma=2592000; v="44,43,39"
+cache-control: private, max-age=0, must-revalidate, no-transform
+content-encoding: gzip
+content-length: 6609
+content-type: application/json; charset=UTF-8
+date: Fri, 25 Jan 2019 16:17:59 GMT
+etag: "Ai7-fio5OapTgz3wSQiZZjdGBnI/owmLxYEZy2CVrgDz746oQ6Uc6aA"
+expires: Fri, 25 Jan 2019 16:17:59 GMT
+server: GSE
+status: 200
+vary: Origin
+vary: X-Origin
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+
+## Request Headers
+:authority: content.googleapis.com
+:method: GET
+:path: /admin/reports/v1/usage/dates/2018-12-08?key=<MY_KEY>
+:scheme: https
+accept: */*
+accept-encoding: gzip, deflate, br
+accept-language: es,en;q=0.9
+authorization: Bearer ya29.Gl-cBip2tconhmBRXpgCh_dWTkQ_tW7mxZnbo6QYYArCxjIOWy86-u4z3gRYgnjU9-2Dc8Jpusuj_56CdqMloPBzQIZy9XNE1ntDmT6iNPj7_ftVCcYzGWX5ApR2QkTryw
+if-none-match: "Ai7-fio5OapTgz3wSQiZZjdGBnI/rNaiMr5108IPb1K-qgki8QjKKvU"
+referer: https://content.googleapis.com/static/proxy.html?usegapi=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.es_419.5GmxTChHLDE.O%2Fam%3DwQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCPgmxzzAAtipjqVOavuQoOk9q05MQ%2Fm%3D__features__
+user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36
+x-clientdetails: appVersion=5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F71.0.3578.80%20Safari%2F537.36&platform=Linux%20x86_64&userAgent=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F71.0.3578.80%20Safari%2F537.36
+x-goog-encode-response-if-executable: base64
+x-javascript-user-agent: apix/3.0.0 google-api-javascript-client/1.1.0
+x-origin: https://explorer.apis.google.com
+x-referer: https://explorer.apis.google.com
+x-requested-with: XMLHttpRequest
+
+## JSON response
+{
+ "kind": "admin#reports#usageReports",
+ "etag": "\"Ai7-fio5OapTgz3wSQiZZjdGBnI/rNaiMr5108IPb1K-qgki8QjKKvU\"",
+ "warnings": [
+  {
+   "code": "PARTIAL_DATA_AVAILABLE",
+   "message": "Data for date 2018-12-08 for application gplus is not available right now, please try again after a few hours.",
+   "data": [
+    {
+     "key": "date",
+     "value": "2018-12-08"
+    },
+    {
+     "key": "application",
+     "value": "gplus"
+    }
+   ]
+  },
+  {
+   "code": "PARTIAL_DATA_AVAILABLE",
+   "message": "Data for date 2018-12-08 for application classroom is not available right now, please try again after a few hours.",
+   "data": [
+    {
+     "key": "date",
+     "value": "2018-12-08"
+    },
+    {
+     "key": "application",
+     "value": "classroom"
+    }
+   ]
+  }
+ ],
