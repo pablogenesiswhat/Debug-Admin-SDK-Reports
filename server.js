@@ -114,6 +114,7 @@ function listUsage(auth, data, callback) {
   let completeCount = 0;
   let dateInit = "";
   let dateEnd = "";
+  const daysCounted = days - x + 1;
 
   let params = {
     userKey: "all",
@@ -160,7 +161,11 @@ function listUsage(auth, data, callback) {
             if (res.data.nextPageToken) nexToken(d);
             else {
               d++;
-              if (!(days >= d)) callback(resInsert);
+              if (!(days >= d)) {
+                if (callback)
+                  callback();
+                else nexToken();
+              }
               else nexToken(d);
             }
           }
@@ -186,7 +191,7 @@ function listUsage(auth, data, callback) {
       });
     } else {
       if (callback) callback();
-      else console.log(`\nData Complete: ${completeCount}\nWarnings: ${warningCount}\nDays counted: ${(days-d-1)+days}\nDate Init: ${dateInit}\nDate End: ${dateEnd}`);
+      else console.log(`\nData Complete: ${completeCount}\nWarnings: ${warningCount}\nDays counted: ${daysCounted}\nDate Init: ${dateInit}\nDate End: ${dateEnd}`);
     }
   };
 

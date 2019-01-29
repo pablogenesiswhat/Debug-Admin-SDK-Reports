@@ -1,9 +1,8 @@
-## HTTP request
+## HTTP Request
 GET /admin/reports/v1/usage/users/all/dates/2018-12-08?maxResults=1 HTTP/1.1
 Host: www.googleapis.com
 Content-length: 0
-Authorization: Bearer ya29.GlucBq2vVT7DGBbD2FNVZCN2535hggXsQsVAku3O7ESlCN5J9LtJ6KhPFhbM1YmGUuHiqRLLCGCwtubOhEvksBRjfPDg4Qfxiu2zmUCvjnUTIaiUsZndx_6Sr2AP
-
+Authorization: Bearer ya29.GlugBuu_pt6PMuU-OQ2o78Xb6AgGLGpP_GikkIvfU8Fie8doDX_yuW1T6jwhOUqRnmDUIhAoPaz7nqEzJZaR3gScLNPHsoUjqf2B7qY-Vo1g3alOkwN6uFQHpMAd
 
 ## Headers
 HTTP/1.1 200 OK
@@ -12,12 +11,12 @@ X-xss-protection: 1; mode=block
 Content-location: https://www.googleapis.com/admin/reports/v1/usage/users/all/dates/2018-12-08?maxResults=1
 X-content-type-options: nosniff
 Transfer-encoding: chunked
-Expires: Fri, 25 Jan 2019 21:44:38 GMT
+Expires: Tue, 29 Jan 2019 16:46:32 GMT
 Vary: Origin, X-Origin
 Server: GSE
-Etag: "Ai7-fio5OapTgz3wSQiZZjdGBnI/INopo0-jwo6KBOHKY3RDaVmTGtQ"
+Etag: "S3VtFupSeWkpIL4X4oyC3FQHUIg/INopo0-jwo6KBOHKY3RDaVmTGtQ"
 Cache-control: private, max-age=0, must-revalidate, no-transform
-Date: Fri, 25 Jan 2019 21:44:38 GMT
+Date: Tue, 29 Jan 2019 16:46:32 GMT
 X-frame-options: SAMEORIGIN
 Alt-svc: quic=":443"; ma=2592000; v="44,43,39"
 Content-type: application/json; charset=UTF-8
@@ -27,42 +26,12 @@ Content-type: application/json; charset=UTF-8
 {
   "nextPageToken": "YWwxMEBndHJhaW5lcmRlbW8uZ2VuZXNpc3doYXQuaW8",
   "kind": "admin#reports#usageReports",
-  "etag": "\"Ai7-fio5OapTgz3wSQiZZjdGBnI/INopo0-jwo6KBOHKY3RDaVmTGtQ\"",
+  "etag": "\"S3VtFupSeWkpIL4X4oyC3FQHUIg/INopo0-jwo6KBOHKY3RDaVmTGtQ\"",
   "usageReports": [
     {
       "date": "2018-12-08",
       "kind": "admin#reports#usageReport",
-      "etag": "\"Ai7-fio5OapTgz3wSQiZZjdGBnI/mjeSj6HpQOtj3Nhvb7pERGL6wy8\"",
-      "warnings": [
-        {
-          "message": "Data for date 2018-12-08 for application gplus is not available right now, please try again after a few hours.",
-          "code": "PARTIAL_DATA_AVAILABLE",
-          "data": [
-            {
-              "value": "2018-12-08",
-              "key": "date"
-            },
-            {
-              "value": "gplus",
-              "key": "application"
-            }
-          ]
-        },
-        {
-          "message": "Data for date 2018-12-08 for application classroom is not available right now, please try again after a few hours.",
-          "code": "PARTIAL_DATA_AVAILABLE",
-          "data": [
-            {
-              "value": "2018-12-08",
-              "key": "date"
-            },
-            {
-              "value": "classroom",
-              "key": "application"
-            }
-          ]
-        }
-      ]
+      "etag": "\"S3VtFupSeWkpIL4X4oyC3FQHUIg/mjeSj6HpQOtj3Nhvb7pERGL6wy8\"",
       "parameters": [
         {
           "intValue": "0",
@@ -783,6 +752,36 @@ Content-type: application/json; charset=UTF-8
         "type": "USER",
         "customerId": "C02nr8le9"
       }
+    }
+  ],
+  "warnings": [
+    {
+      "message": "Data for date 2018-12-08 for application gplus is not available right now, please try again after a few hours.",
+      "code": "PARTIAL_DATA_AVAILABLE",
+      "data": [
+        {
+          "value": "2018-12-08",
+          "key": "date"
+        },
+        {
+          "value": "gplus",
+          "key": "application"
+        }
+      ]
+    },
+    {
+      "message": "Data for date 2018-12-08 for application classroom is not available right now, please try again after a few hours.",
+      "code": "PARTIAL_DATA_AVAILABLE",
+      "data": [
+        {
+          "value": "2018-12-08",
+          "key": "date"
+        },
+        {
+          "value": "classroom",
+          "key": "application"
+        }
+      ]
     }
   ]
 }
