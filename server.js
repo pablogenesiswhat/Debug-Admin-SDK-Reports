@@ -7,7 +7,7 @@ const reports = require("./functions/reports");
 const config = require("./config");
 
 // days request query into api admin sdk
-const data = { days: 50 };
+const data = { days: 10 };
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the

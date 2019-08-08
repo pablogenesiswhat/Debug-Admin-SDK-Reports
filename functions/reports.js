@@ -1,5 +1,9 @@
 const {google} = require('googleapis');
 const dateFormat = require("dateformat");
+const Json = require("../module/jsonFile");
+
+// create element json output
+const json = new Json();
 
 // ---------------------------- Reporte de actividad de uso -----------------------------------
 /**
@@ -24,6 +28,8 @@ module.exports = function (auth, data, callback) {
 
   // Days
   const x = 3;
+  // array save output
+  const arrSave = [];
 
   // Counts results
   let warningCount = 0;
@@ -49,7 +55,7 @@ module.exports = function (auth, data, callback) {
 
       if (d == x) dateInit = date;
       dateEnd = date;
-      
+
       service.userUsageReport.get(params, (err, res) => {
         if (err)
           if (callback) return callback({ err: err });
@@ -67,12 +73,16 @@ module.exports = function (auth, data, callback) {
           else {
             warningCount++;
             console.info("\n Warning");
-            console.error({
+            const output = {
               date: date,
               response: res.data.etag,
               message: res.data.warnings
               //usage: res.data.usageReports
-            });
+            }
+
+            console.error(output);
+
+            arrSave.push({ Warrning: warningCount, });
 
             if (res.data.nextPageToken) nexToken(d);
             else {
@@ -91,7 +101,11 @@ module.exports = function (auth, data, callback) {
           completeCount++;
           if (items) {
             console.info(`\n Data Complete`);
-            console.info({ response: date, complete: true });
+            const output = { intent: completeCount, response: date, complete: true };
+
+            console.info(output);
+
+            arrSave.push({ Warrning: warningCount, });
 
             if (res.data.nextPageToken) nexToken(d);
             else {
@@ -106,6 +120,9 @@ module.exports = function (auth, data, callback) {
         }
       });
     } else {
+      // json write
+      json.write("reports", arrSave );
+
       if (callback) callback();
       else console.log(`\nData Complete: ${completeCount}\nWarnings: ${warningCount}\nDays counted: ${daysCounted}\nDate Init: ${dateInit}\nDate End: ${dateEnd}`);
     }
