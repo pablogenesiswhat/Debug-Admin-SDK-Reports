@@ -9,6 +9,8 @@
 
 ## Getting Started
 
+create file .env 
+
 ```bash
 npm install
 # Development server
