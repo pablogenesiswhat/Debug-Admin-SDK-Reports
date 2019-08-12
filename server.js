@@ -4,10 +4,37 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 const reports = require("./functions/reports");
+const customer = require("./functions/customer");
 const config = require("./config");
 
+const express = require('express');
+const app = express();
+const path = require('path');
+const router = express.Router();
+const _dirname = `${__dirname}/public/`;
+
+app.use('/logs', express.static('./logs'));
+
+//add the router
+app.use('/', router);
+app.listen(process.env.port || 3000);
+
+// get customer json model
+router.get('/get.customer',function(req,res){
+  try { authorize(customer); }
+  catch (e) { console.log(e); }
+  res.send("Process in background, viewer log");
+  //res.sendFile(path.join(_dirname+'customer.html'));
+  //__dirname : It will resolve to your project folder.
+});
+
+//  view customer model
+router.get('/view.customer',function(req,res){
+  res.sendFile(path.join(_dirname+'customer.html'));
+});
+
 // days request query into api admin sdk
-const data = { days: 10 };
+const data = { days: 100 };
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -73,5 +100,3 @@ function storeToken(token) {
 }
 
 // init function
-try { authorize(reports); }
-catch (e) { console.log(e); }

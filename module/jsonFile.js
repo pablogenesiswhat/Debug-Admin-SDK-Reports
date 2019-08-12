@@ -4,8 +4,8 @@ const dateFormat = require("dateformat");
 module.exports = class {
   write (name, values) {
     const date = dateFormat(new Date(), "yyyy-mm-dd");
-    const stringify = { date: values };
+    const data = { date: date, values: values };
 
-    jsonfile.writeFile(`logs/${name}.json`, stringify);
+    jsonfile.writeFile(`logs/${name}.json`, data);
   }
 };

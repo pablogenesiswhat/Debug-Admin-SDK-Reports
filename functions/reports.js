@@ -20,7 +20,7 @@ const json = new Json();
  * Este reporte incluye toda la gama de informacion por cada usuario segun esquema
  */
 module.exports = function (auth, data, callback) {
-  console.log("Init reports process");
+  console.log("Init Reports User Usage Process");
   const days = (data.days || 50) + 2;
 
   const service = google.admin({ version: "reports_v1", auth });
@@ -82,7 +82,7 @@ module.exports = function (auth, data, callback) {
 
             console.error(output);
 
-            arrSave.push({ Warrning: warningCount, });
+            arrSave.push({ Warrning: warningCount, values: output});
 
             if (res.data.nextPageToken) nexToken(d);
             else {
@@ -105,7 +105,7 @@ module.exports = function (auth, data, callback) {
 
             console.info(output);
 
-            arrSave.push({ Warrning: warningCount, });
+            arrSave.push({ Warrning: warningCount, values: output});
 
             if (res.data.nextPageToken) nexToken(d);
             else {
@@ -121,7 +121,7 @@ module.exports = function (auth, data, callback) {
       });
     } else {
       // json write
-      json.write("reports", arrSave );
+      json.write("user", arrSave );
 
       if (callback) callback();
       else console.log(`\nData Complete: ${completeCount}\nWarnings: ${warningCount}\nDays counted: ${daysCounted}\nDate Init: ${dateInit}\nDate End: ${dateEnd}`);
