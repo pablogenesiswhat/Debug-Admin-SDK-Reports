@@ -23,9 +23,23 @@ app.listen(process.env.port || 3000);
 router.get('/get.customer',function(req,res){
   try { authorize(customer); }
   catch (e) { console.log(e); }
-  res.send("Process in background, viewer log");
+  res.send("Process in background, view log");
   //res.sendFile(path.join(_dirname+'customer.html'));
   //__dirname : It will resolve to your project folder.
+});
+
+// get customer json model
+router.get('/get.user',function(req,res){
+  try { authorize(reports); }
+  catch (e) { console.log(e); }
+  res.send("Process in background, view log");
+  //res.sendFile(path.join(_dirname+'customer.html'));
+  //__dirname : It will resolve to your project folder.
+});
+
+//  view customer model
+router.get('/view.user',function(req,res){
+  res.sendFile(path.join(_dirname+'reports.html'));
 });
 
 //  view customer model
