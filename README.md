@@ -18,3 +18,16 @@ npm install
 # Development server
 npm start
 ```
+
+## Routes
+
+# Get data 
+http://localhost:3000/get.customer
+http://localhost:3000/get.user
+
+# Log
+check console log for results
+
+# View data
+http://localhost:3000/view.customer
+http://localhost:3000/view.user
