@@ -1,4 +1,4 @@
-# Debug Admin SDK Reports
+# Debugging days without alerts received within API Admin SDK Reports
 
 ## Dependencies
 
